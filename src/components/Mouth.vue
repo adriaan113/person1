@@ -1,7 +1,8 @@
 <template>
     <div class="mouth" @click="smile">
-        <img v-show="laugh" :src="images.mouth" alt="">
-        <img v-show="!laugh" :src="images.smile" alt="">
+        <img v-show="laugh && open" :src="images.mouth" alt="">
+        <img v-show="!laugh && open" :src="images.smile" alt="">
+        <img v-show="shut" :src="images.shut" alt="">
     </div>
 </template>
 
@@ -14,18 +15,26 @@ export default {
                 smile: require('../assets/smile.svg'),
                 shut: require('../assets/mouthshut.svg')
             },
-            laugh: true 
+            laugh: true,
+            shut: false,
+            open: true
         }
     },
     methods:{
         smile: function(){    
             this.laugh= !this.laugh;
          },
-        shut: function(){
+        shutMouth: function(){
             setInterval(()=>{
-         //hier moet iets komen!
-          },3000);
+            
+            this.open = !this.open;
+            this.shut = !this.shut;
+
+          },4000);
         }
+    },
+    mounted(){
+        this.shutMouth();
     }
 }
 </script>

@@ -1,11 +1,8 @@
 <template>
-    <div class="nose">
+    <div class="nose" @click="peekABoo">
             <img  :src="images.nose" alt="">
             
-            <svg viewBox="0 0 46 320" xmlns="http://www.w3.org/2000/svg">
-              <desc>
-                Created with Sketch.
-              </desc>
+            <svg viewBox="0 0 46 320" v-show="showSnot">
               <g fill="none" fill-rule="evenodd">
                 <path d="M23 0c8.5 89.2 13.6 148.8 15.5 178.8 1.7 26.4 5.3 47.8 6.5 64.6C49.8 309.3 8.2 354 1 284c-2.5-24.4 5.7-60.6 9.8-111.4C13.3 142 17.4 84.3 23 0z" fill="#78BF27"/>
                 <g transform="translate(15 117)" fill="#CCD621">
@@ -30,8 +27,26 @@ export default {
             images: {
                 nose: require('../assets/nose.svg'),
                 snot: require('../assets/snot.svg')
-            }
+            },
+            showSnot: false
         }
+    },
+    methods:{
+      peekABoo: function(){
+        const snot = document.querySelector('.nose svg');
+        // console.log('is dit snot???');
+
+        // const tl = gsap.timeline({repeat: -1});
+
+        //snot.style.scaleY = 0;
+        this.showSnot = true;
+
+        gsap.to(snot, {
+          duration: 5, 
+          ease: 'elastic',
+          scaleY: '10'
+          });
+      }
     }
 }
 </script>

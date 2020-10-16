@@ -65,10 +65,11 @@ export default {
 .wrapper{
   width: 100%;
   height: 100vh;
+  //background-image: linear-gradient(to bottom, deeppink, yellow); 
 }
 
 .face{
-  background-image: url('./assets/groundLayer.svg');
+  background-image: url('./assets/groundLayer.png');
   background-position: center; 
   background-repeat: no-repeat;
   background-size: contain; 

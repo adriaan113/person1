@@ -22,7 +22,7 @@
     <g fill="#FFF">
       <path d="M338 250l18.4-3-.4 37h-18zM308 247l17-5v37h-18zM269.9 238l24.1 4v33h-18zM239 233h12.3l5.7 37h-18zM369 247h13.8l4.2 37h-18zM395.8 247H418v37h-18zM429 247l20-5v42h-18z"/>
     </g>
-    <g filter="url(#a)" transform="rotate(-2 1420.7 -3423.9)">
+    <g  filter="url(#a)" transform="rotate(-2 1420.7 -3423.9)">
       <path fill="#FFF" d="M160.8 58h22.1l4.1 36h-30zM199.4 58h22.4l4.2 36h-30z"/>
       <path d="M239.1 53.5l-3.5 35h29.8l-4.9-35h-21.4z" stroke="#979797" fill="#FFE342"/>
       <path fill="#FFF" d="M281.8 51H304l4.1 36h-29zM321.2 44h22.3l4.5 36h-30zM360.3 40h21.9l3.8 36h-30zM122.3 50H144l4.9 36h-30zM79.4 37h22l3.6 36H75zM43.9 19h21.9L69 58H41zM5.2 0H27v36H0z"/>

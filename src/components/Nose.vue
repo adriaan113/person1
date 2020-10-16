@@ -34,18 +34,26 @@ export default {
     methods:{
       peekABoo: function(){
         const snot = document.querySelector('.nose svg');
-        // console.log('is dit snot???');
-
-        // const tl = gsap.timeline({repeat: -1});
-
-        //snot.style.scaleY = 0;
+       // snot.style.scaleY = 0;
+        snot.style.transformOrigin = '10% 0%';
+        snot.style.height = 0;
         this.showSnot = true;
 
-        gsap.to(snot, {
-          duration: 5, 
-          ease: 'elastic',
-          scaleY: '10'
-          });
+        // gsap.to(snot, {
+        //   duration: 6, 
+        //   ease: 'elastic',
+        //   scaleY: '1.6',
+        //   transformOrigin: '%10% 0%',
+        //   runBackwards: true,
+        //   repeat: 2,
+        //   delay: 1,
+        //   //yoyo: true
+        //   });
+        const tl = gsap.timeline();
+              tl.to(snot, {height: 50, duration: 2, ease: "elastic"});
+              tl.to(snot, {scaleY: 0.9, duration: 0.4});
+              tl.to(snot, {scaleY: 1.1, duration: 0.4}).reverse(0);
+              // tl.to(snot, {scaleY: 1, duration: 1});
       }
     }
 }
@@ -60,6 +68,7 @@ export default {
     width: 25%;
     margin-top: 40px;
     position: relative;
+    cursor: pointer;
     img{
       width: 100%;
     }

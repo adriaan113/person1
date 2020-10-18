@@ -5,6 +5,7 @@
         <div class="hair">
           <img :src="images.hair" alt="">
         </div>
+        <sweat></sweat>
         <eyes></eyes>
         <nose></nose>
         <mouth></mouth>

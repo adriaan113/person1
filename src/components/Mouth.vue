@@ -41,6 +41,7 @@ export default {
 
 <style lang="scss" scoped>
   .mouth{
+    z-index: 9999;
     top: 60%;
     grid-column: 2 /4;
     grid-row: 4/5;

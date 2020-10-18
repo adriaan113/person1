@@ -26,7 +26,7 @@ export default {
         return {
             images: {
                 nose: require('../assets/nose.svg'),
-                snot: require('../assets/snot.svg')
+                // snot: require('../assets/snot.svg')
             },
             showSnot: false
         }
@@ -39,18 +39,8 @@ export default {
         snot.style.height = 0;
         this.showSnot = true;
 
-        // gsap.to(snot, {
-        //   duration: 6, 
-        //   ease: 'elastic',
-        //   scaleY: '1.6',
-        //   transformOrigin: '%10% 0%',
-        //   runBackwards: true,
-        //   repeat: 2,
-        //   delay: 1,
-        //   //yoyo: true
-        //   });
         const tl = gsap.timeline();
-              tl.to(snot, {height: 50, duration: 2, ease: "elastic"});
+              tl.to(snot, {height: 50, duration: 3, ease: "elastic"});
               tl.to(snot, {scaleY: 0.9, duration: 0.4});
               tl.to(snot, {scaleY: 1.1, duration: 0.4}).reverse(0);
               // tl.to(snot, {scaleY: 1, duration: 1});

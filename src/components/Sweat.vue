@@ -1,7 +1,7 @@
 <template>
     
     <div>
-        <div >
+        <div>
             <div class="sweat-drop" v-for="n in 5">
                 <!-- <p>{{n}}</p> -->
                 <svg width="92px" height="240px" viewBox="0 0 92 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -66,36 +66,38 @@ export default {
             const drop5 = document.querySelector('.sweat-drop:nth-child(4)');
             const drop6 = document.querySelector('.sweat-drop:nth-child(5)');
 
+            drop2.style.opacity= 0;
+            drop3.style.opacity= 0;
+            drop4.style.opacity= 0;
+            drop5.style.opacity= 0;
+            drop6.style.opacity= 0;
+
+            function clearDrops(x){
+                x.style.opacity = 0;
+            }
+
 
             function dripMechanic(x,y){
-                gsap.to(x, {
+
+                const tl = gsap.timeline({onComplete: function(){clearDrops(x)}});
+                tl.to(x, {
+                opacity: 1,
                 duration: 3, 
-                repeatDelay: 3,
-                ease: "power1.inOut",
+                ease: "sine.inOut",
                 motionPath:{
                     path: `#line-test${y} g path`,
                     align: `#line-test${y} g path`,
                     autoRotate: false,
                     alignOrigin: [0.5, 0.5]
                 },
-                //opacity: 0
-            }).then(gsap.to(x,{
-                delay: 4,
-                opacity: 0
-            }));
+            });
             }
-
             dripMechanic(drop2,2);
             dripMechanic(drop3,3);
             dripMechanic(drop4,4);
             dripMechanic(drop5,5);
             dripMechanic(drop6,6);
-
-}
-    }
-    ,
-    mounted(){
-        this.dripping();
+        },
     }
 }
 </script>
@@ -141,6 +143,7 @@ export default {
 
 .sweat-drop{
     position: absolute;
+    opacity: 0;
     svg{
         width: 10%;
         opacity: .8;

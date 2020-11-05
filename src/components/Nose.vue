@@ -25,7 +25,7 @@ export default {
     data (){
         return {
             images: {
-                nose: require('../assets/nose.svg'),
+                nose: require('../assets/noseNew.svg'),
                 // snot: require('../assets/snot.svg')
             },
             showSnot: false
@@ -65,7 +65,7 @@ export default {
     svg{
       position: absolute;
       width: 14%;
-      top: 70%;
+      top: 60%;
       left: 65%;
     }
   }

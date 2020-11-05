@@ -1,11 +1,11 @@
 <template>
   <div id="app">
      <div class="wrapper">
-      <div class="face" @mousemove="eyeMove">
+      <div class="face" @mousemove="eyeMove" @mouseover="workForSweat">
         <div class="hair">
           <img :src="images.hair" alt="">
         </div>
-        <sweat></sweat>
+        <sweat ref="sweat"></sweat>
         <eyes></eyes>
         <nose></nose>
         <mouth></mouth>
@@ -23,6 +23,7 @@ export default {
   data () {
     return {
       msg: 'satan satan satan',
+      mouseMoves: 0,
       images: {
         hair: require('./assets/hairNew.svg'),
       },
@@ -39,6 +40,13 @@ export default {
         const radian = Math.atan2(e.pageX - x, e.pageY - y);
         const rot = (radian * (180 / Math.PI) * -1) + 0; //was +90 
         eyes[i].style.transform = `rotate(${rot}deg)`;
+      }
+    },
+    workForSweat: function(){
+      this.mouseMoves+= 1;
+      if(this.mouseMoves > 100){
+        this.$refs.sweat.dripping();
+        this.mouseMoves = 0;
       }
     }
   }
@@ -85,9 +93,9 @@ export default {
     justify-self: center;
     align-self: center;
     position: absolute;
-    top: 80px;
+    //top: 80px;
     img{
-      width: 84%;
+      width: 75%;
     }
   }
 

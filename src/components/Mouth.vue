@@ -44,11 +44,14 @@ export default {
     z-index: 9999;
     top: 60%;
     grid-column: 2 /4;
-    grid-row: 4/5;
+    grid-row: 3/5;
     justify-self: center;
     align-self: center;
-    width: 40%;
+    width: 35%;
     cursor: pointer;
+    position: absolute;
+    top: 66%;
+    left: 30%;
     img{
       width: 100%;
     }

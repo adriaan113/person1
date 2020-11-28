@@ -52,13 +52,18 @@ export default {
 <style lang="scss" scoped>
   .nose{
     grid-column: 2/4;
-    grid-row: 2/4;
+    grid-row: 3/4;
     justify-self: center;
     align-self: center;
-    width: 25%;
-    margin-top: 40px;
-    position: relative;
+    width: 22%;
+    /* margin-top: 40px; */
+    position: absolute;
+    top: 33%;
+    left: 37%;
     cursor: pointer;
+    @media screen and (min-width: 400px){
+      //margin-top: 67px;
+    }
     img{
       width: 100%;
     }

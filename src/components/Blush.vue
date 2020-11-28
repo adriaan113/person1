@@ -36,8 +36,12 @@ export default {
     grid-column: 2/4;
     grid-row: 3/4;
     align-self: end;
+    position: absolute;
+    top: 48%;
+    width: 70%;
+    left: 14%;
     img{
-      width: 80%;
+      width: 100%;
     }
   }
 </style>

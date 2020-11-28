@@ -25,8 +25,8 @@ export default {
       images: {
         eyeLeft: require('../assets/eyeLeftNew.svg'),
         eyeRight: require('../assets/eyeRightNew.svg'),
-        pupilLeft: require('../assets/pupilLeft2.svg'),
-        pupilRight: require('../assets/pupilRight2.svg'),
+        pupilLeft: require('../assets/pupilLeft3.svg'),
+        pupilRight: require('../assets/pupilRight3.svg'),
         eyelidLeft: require('../assets/eyelidLeft.svg'),
         eyelidRight: require('../assets/eyelidRight.svg'),
         eyebrowLeft: require('../assets/eyebrowLeftNew.svg'),
@@ -64,9 +64,16 @@ export default {
   .eyes{
     display: flex;
     grid-column: 2/4;
-    grid-row: 2/3;
+    grid-row: 2/4;
     justify-self: center;
     align-self: center;
+    position: absolute;
+    top: 28%;
+    left: 15%;
+    width: 72%;
+    @media screen and (min-width: 400px){
+      //padding: 1rem;
+    }
   }
 
   .left-eye{
@@ -91,15 +98,13 @@ export default {
     }
      .right-pupil{
       position: absolute;
-      width: 15%;
-      // top: 33%;
-      // left: 65%;
+      width: 11%;
+      top: 17%;
     }
      .left-pupil{
       position: absolute;
-      width: 15%;
-      // top: 35%;
-      // left: 35%;
+      width: 11%;
+      top: 18%;
     }
     .left-eyebrow,
     .right-eyebrow{

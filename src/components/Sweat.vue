@@ -49,6 +49,11 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+
+gsap.registerPlugin(MotionPathPlugin);
+
 export default {
     data(){
         return{

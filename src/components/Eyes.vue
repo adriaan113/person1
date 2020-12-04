@@ -109,7 +109,7 @@ export default {
     .left-eyebrow,
     .right-eyebrow{
       position: absolute;
-      top: -15px;
+      top: -58%;;
     }
   }
 

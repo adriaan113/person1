@@ -15,6 +15,10 @@ export default {
                 smile: require('../assets/smile.svg'),
                 shut: require('../assets/mouthshut.svg')
             },
+            sound:{
+                laugh: 'http://soundbible.com/mp3/Goofy Laugh-SoundBible.com-180933118.mp3',
+                normal: 'http://soundbible.com/mp3/Whine-SoundBible.com-1207627053.mp3'
+            },
             laugh: true,
             shut: false,
             open: true
@@ -23,6 +27,14 @@ export default {
     methods:{
         smile: function(){    
             this.laugh= !this.laugh;
+
+            if(!this.laugh){
+              var audio = new Audio(this.sound.laugh);
+                audio.play();  
+            }else{
+                var audio = new Audio(this.sound.normal);
+                audio.play();  
+            }
          },
         shutMouth: function(){
             setInterval(()=>{
@@ -31,6 +43,12 @@ export default {
             this.shut = !this.shut;
 
           },4000);
+        },
+        startToLaugh: function(sound){
+            if(sound) {
+                var audio = new Audio(sound);
+                audio.play();
+      }
         }
     },
     mounted(){

@@ -1,5 +1,5 @@
 <template>
-    <div class="nose" @click="peekABoo">
+    <div class="nose" @click="peekABoo" @click.prevent="playRubSound(sound.rub)">
             <img  :src="images.nose" alt="">
             
             <svg viewBox="0 0 46 320" v-show="showSnot">
@@ -21,12 +21,20 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+
+gsap.registerPlugin(MotionPathPlugin);
+
 export default {
     data (){
         return {
             images: {
                 nose: require('../assets/noseNew.svg'),
                 // snot: require('../assets/snot.svg')
+            },
+            sound: {
+              rub: 'http://soundbible.com/mp3/Nose Blowing-SoundBible.com-219114349.mp3'
             },
             showSnot: false
         }
@@ -44,7 +52,13 @@ export default {
               tl.to(snot, {scaleY: 0.9, duration: 0.4});
               tl.to(snot, {scaleY: 1.1, duration: 0.4}).reverse(0);
               // tl.to(snot, {scaleY: 1, duration: 1});
+      },
+        playRubSound (sound) {
+      if(sound) {
+        var audio = new Audio(sound);
+        audio.play();
       }
+    }
     }
 }
 </script>
@@ -69,9 +83,13 @@ export default {
     }
     svg{
       position: absolute;
-      width: 14%;
+      // width: 14%;
+      // top: 60%;
+      // left: 65%;
+      
+      width: 33%;
       top: 60%;
-      left: 65%;
+      left: 58%;
     }
   }
 </style>

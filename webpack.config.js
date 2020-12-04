@@ -51,8 +51,10 @@ module.exports = {
               'css-loader',
               'sass-loader?indentedSyntax'
             ]
-          }
+          },
+          
           // other vue-loader options go here
+          
         }
       },
       {
@@ -66,7 +68,7 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
-      }
+      },
     ]
   },
   resolve: {

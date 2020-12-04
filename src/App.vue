@@ -28,7 +28,12 @@ export default {
       images: {
         hair: require('./assets/hairNew.svg'),
         face: require('./assets/groundLayer.png'),
+        // rub: require('./assets/soundRubbing.mp3')
       },
+      sound:{
+        rubbing: 'http://soundbible.com/mp3/Blood Squirt-SoundBible.com-1808242738.mp3',
+        exhale: 'http://soundbible.com/mp3/Exhale-SoundBible.com-1772711989.mp3'
+      }
     }
   },
   methods: {
@@ -46,8 +51,12 @@ export default {
     },
     workForSweat: function(){
       this.mouseMoves+= 1;
+      // var workAudio = new Audio(this.sound.rubbing);
+      // workAudio.play(); 
       if(this.mouseMoves > 100){
         this.$refs.sweat.dripping();
+        var exhaleAudio = new Audio(this.sound.exhale);
+        exhaleAudio.play(); 
         this.mouseMoves = 0;
       }
     },
@@ -57,10 +66,8 @@ export default {
       tl2.to(background,20,{
      backgroundPosition: "-2000px 0px",
       ease: Linear.easeNone,
-      })
-
-      
-    }
+      }) 
+    },
   }
 }
 </script>
@@ -73,9 +80,9 @@ export default {
 //********VARIABLES********//
 
 //MEDIA-QUERIES//
-//$break-small: 400px;
+$break-small: 600px;
 // $break-medium:
- $break-large: 800px;
+ $break-large: 550px;
 // $break-xlarge:
 
 
@@ -109,6 +116,9 @@ export default {
   .face{
     position: relative;
     max-width: $break-large;
+    @media(min-width: $break-small) {
+      width: 60%;
+    }
     img{
       width: 100%;
       height: auto;  
@@ -121,34 +131,5 @@ export default {
     left: 8%;
     width: 84%;
   }
-
-// .face{
-//   background-image: url('./assets/groundLayer.png');
-//   background-position: center; 
-//   background-repeat: no-repeat;
-//   background-size: contain; 
-//   display: grid;
-//   // grid-template-columns: 40px 1fr 1fr 40px;
-//   grid-template-columns: 40px minmax(100px, 300px) minmax(100px,300px) 40px;
-//   //grid-template-rows:  repeat(5, 1fr);
-//   grid-template-rows: repeat(5,minmax(100px, 300px));
-//   height: 100vw;
-//   position: relative;
-// }
-
-//   .hair{
-//     grid-column: 2/4 ;
-//     grid-row: 1/3;
-//     justify-self: center;
-//     align-self: center;
-//     position: absolute;
-//     //top: 80px;
-//     img{
-//       width: 100%;
-//       @media screen and(min-width: $break-small){
-//         //width: 82%;
-//       }
-//     }
-//   }
 
 </style>
